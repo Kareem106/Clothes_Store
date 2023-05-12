@@ -1,0 +1,212 @@
+:root {
+  --Pink:#c48e90;
+  --Green:#003d29;
+  --Light-Green:#016946;
+  --Grey:#c2c1c1;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  padding: 0 1rem;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--Green);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+header h1 {
+  text-transform: uppercase;
+}
+header nav a, header .user a {
+  color: var(--Green);
+  font-size: 1.2em;
+  margin: 0 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+header nav a:hover, header .user a:hover {
+  color: var(--Light-Green);
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .user a {
+  margin: 0 1rem;
+}
+header .burger-menu {
+  z-index: 200;
+  display: none;
+}
+header .burger-menu span {
+  display: block;
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--Green);
+  transition: 1s;
+}
+header .burger-menu span:nth-child(2) {
+  margin: 2px 0;
+}
+
+.main-section {
+  position: relative;
+  background-image: url(./img/home.jpg);
+  height: 70vh;
+  background-size: cover;
+}
+.main-section .heading {
+  padding-top: 5rem;
+  font-size: 1.3em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--Green);
+}
+.main-section .heading h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+}
+.main-section .heading p {
+  max-width: 30rem;
+}
+.main-section .heading * {
+  margin: 2rem 0;
+}
+.main-section .heading a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+  background-color: var(--Green);
+  padding: 0.8rem 1rem;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.main-section .heading a:hover {
+  box-shadow: 0px 0px 10px 1px var(--Green);
+}
+
+.categorties {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.categorties h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+.categorties .cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+.categorties .cards .card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: grey;
+  margin: 0px 2rem 0 0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.categorties .cards .card img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  transition: inherit;
+}
+.categorties .cards .card h3 {
+  position: absolute;
+  top: 100%;
+  transition: 0.5s;
+  color: white;
+}
+.categorties .cards .card:hover {
+  box-shadow: 0px 0px 10px 1px var(--Green);
+}
+.categorties .cards .card:hover img {
+  transform: scale(1.5);
+  filter: brightness(50%);
+}
+.categorties .cards .card:hover h3 {
+  transform: translate(10%, -150%);
+}
+
+.screen-align {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+@media (max-width: 1000px) {
+  header .burger-menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  header nav {
+    position: absolute;
+    width: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    background-color: white;
+    padding-top: 5rem;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+    z-index: -1;
+  }
+  header nav a {
+    width: 100%;
+    padding: 2rem 5rem;
+    transition: 1s opacity;
+    opacity: 0;
+  }
+  header nav a:hover {
+    background-color: var(--Grey);
+  }
+  header.open .burger-menu span:nth-child(2) {
+    transform: translateX(10px);
+  }
+  header.open .burger-menu span:nth-child(3) {
+    transform: translateX(20px);
+  }
+  header.open nav {
+    width: 100%;
+  }
+  header.open nav a {
+    opacity: 1;
+  }
+  .categorties .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .categorties .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}/*# sourceMappingURL=master.css.map */
