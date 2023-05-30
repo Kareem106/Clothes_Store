@@ -223,6 +223,46 @@ header{
     }
     
 }
+hr{
+    margin: 2rem 0;
+}
+.about{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 500px repeat(3,1fr);
+    padding: 1rem 1rem 7rem 1rem;
+    font-size: 1.2em;
+    p{
+        width: 75%;
+        color: var(--Grey);
+        transition: 0.5s;
+        &:hover{
+            color: orange;
+            transform: translateX(15px);
+        }
+    }
+    h1{
+        color: var(--Green);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+    ul{
+        padding: 0;
+        li{
+            text-transform: capitalize;
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 0.5rem;
+            color: var(--Grey);
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover{
+                color: orange;
+                transform: translateX(15px);
+            }
+        }
+    }
+}
 .products{
     position: fixed;
     z-index: 50;
@@ -402,6 +442,17 @@ header{
             grid-template-columns: repeat(2,1fr);
         }
     }
+    .about{
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 4rem;
+        p{
+            width: 100%;
+        }
+        div{
+            padding: 0px 25%;
+            margin-bottom: 2rem;
+        }
+    }
     .products{
         .list{
             grid-template-columns: repeat(2,1fr);
@@ -417,6 +468,17 @@ header{
     .discount{
         .cards{
             grid-template-columns: repeat(1,1fr);
+        }
+    }
+    .about{
+        grid-template-columns:1fr;
+        padding-bottom: 1rem;
+        p{
+            width: 100%;
+        }
+        div{
+            padding: 0px 1rem;
+            margin-bottom: 2rem;
         }
     }
     .products{
